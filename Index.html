@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cloud Based AI Model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef4ff;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background: white;
+            width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px #aaa;
+        }
+
+        h1 {
+            color: #3157d5;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        button {
+            background: #3157d5;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #203da0;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>☁️ Cloud AI Model</h1>
+
+    <p>Enter study hours to predict the result.</p>
+
+    <input type="number" id="hours" placeholder="Enter study hours">
+
+    <br>
+
+    <button onclick="predict()">Predict Result</button>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+    function predict() {
+
+        let hours = document.getElementById("hours").value;
+        let result = document.getElementById("result");
+
+        if (hours == "") {
+            result.innerHTML = "Please enter study hours.";
+            return;
+        }
+
+        if (hours >= 6) {
+            result.innerHTML = "🤖 AI Prediction: High chance of passing!";
+        }
+        else if (hours >= 3) {
+            result.innerHTML = "🤖 AI Prediction: Moderate chance of passing.";
+        }
+        else {
+            result.innerHTML = "🤖 AI Prediction: Low chance of passing.";
+        }
+    }
+</script>
+
+</body>
+</html>
